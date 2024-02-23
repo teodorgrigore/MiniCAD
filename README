@@ -1,0 +1,32 @@
+                --- Programare Orientata pe Obiecte ---
+                            "MiniCAD"
+
+                --- Grigore-Mandru Dimitrie-Teodor ---
+            --- Facultatea de Automatica si Calculatoare ---
+            --- Universitatea Politehnica, Bucuresti     ---
+
+	Am implementat tema folosind cele 3 design pattern-uri in modul urmator:
+
+	- In main, in loc sa creez instante ale figurilor in mod clasic, am creat o clasa
+ShapeFactory, care contine o metoda care returneaza o instanta a uneia din cele 8 forme in 
+functie de Stringul primit ca parametru, utilizand astfel Factory Pattern.
+	- De asemenea, am observat ca aceasta clasa este instantiata o singura data (in main)
+in tot codul si am modificat-o astfel incat sa fie o clasa de tipul Singleton (am ascuns
+constructorul si am creat o metoda care returneaza instanta creata in interiorul ei). 
+	- Avand in vedere faptul ca in fisierul de intrare figura "Canvas" apare o singura
+data, deci scopul programului este de a desena figuri geometrice doar pe o singura imagine,
+am modificat de asemenea aceasta clasa (in acelasi mod) astfel incat sa fie de tipul Singleton.
+	- Am creat 3 interfete (Shape, Visitable si Visitor). Figurile geometrice implementeaza
+Shape si Visitable, astfel incat toate trebuie sa suprascrie metodele draw (deseneaza in BufferedImage-ul
+creat in Canvas, folosind algoritmii de desenare implementati in clasa DrawAlgorithms si metodele din
+PointUtils), readData (citeste inputul in functie de tipul figurii) si accept (prin care se accepta
+actiunea visitorului apelat in main).
+	- Clasa care implementeaza interfata Visitor este DrawShapeVisitor. Aceasta contine cate o metoda
+pentru fiecare shape, care primeste un tip de figura si apeleaza metoda draw() a acesteia. In main 
+este apelata functia care returneaza instanta de DrawShapeVisitor (DrawShapeVisitor foloseste Singleton Pattern),
+iar dupa ce se instantiaza forma citita folosind factory-ul
+si se citesc datele din input, se creaza un obiect de tip Visitable pentru a putea face cast de la Shape la
+Visitable (se poate da accept doar pe un obiect de tip Visitable) si se apeleaza metoda accept(drawVisitor),
+figura fiind astfel desenata. Acesta este modul prin care am implementat Visitor Pattern.
+	- Dupa ce toate figurile au fost desenate, se creeaza o imagine "drawing.png" in care se pune BufferedImage-ul
+obtinut.

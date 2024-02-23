@@ -1,0 +1,32 @@
+JFLAGS = -g
+JC = javac
+.SUFFIXES:.java .class
+
+build:
+	$(JC) $(JFLAGS) *.java
+
+CLASSES = \
+	Main.java \
+	implementations/factories/ShapeFactory.java \
+	implementations/shapes/Canvas.java \
+	implementations/shapes/Line.java \
+	implementations/shapes/Square.java \
+	implementations/shapes/Rectangle.java \
+	implementations/shapes/Circle.java \
+	implementations/shapes/Diamond.java \
+	implementations/shapes/Triangle.java \
+	implementations/shapes/Polygon.java \
+	implementations/utils/ColorUtils.java \
+	implementations/utils/DrawAlgorithms.java \
+	implementations/utils/Point.java \
+	implementations/utils/PointUtils.java \
+	implementations/visitors/DrawShapeVisitor.java \
+	interfaces/shape/Shape.java \
+	interfaces/visitables/Visitable.java \
+	interfaces/visitors/Visitor.java \
+	fileio/implementations/FileReader.class
+
+default: classes
+
+clean:
+	$(RM) *.class
