@@ -5,6 +5,7 @@
             --- Facultatea de Automatica si Calculatoare ---
             --- Universitatea Politehnica, Bucuresti     ---
 
+![alt text](https://github.com/teodorgrigore/MiniCAD/edit/main//result-owl.png)
 
 
 Am implementat tema folosind cele 3 design pattern-uri in modul urmator:
@@ -37,3 +38,4 @@ figura fiind astfel desenata. Acesta este modul prin care am implementat Visitor
 
 - Dupa ce toate figurile au fost desenate, se creeaza o imagine "drawing.png" in care se pune BufferedImage-ul
 obtinut.
+
