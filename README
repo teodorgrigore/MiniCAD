@@ -5,8 +5,9 @@
             --- Facultatea de Automatica si Calculatoare ---
             --- Universitatea Politehnica, Bucuresti     ---
 
-![alt text][cat]
-[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Output example"
+Some really nice drawings :
+- https://github.com/teodorgrigore/MiniCAD/blob/main/cat.png
+- https://github.com/teodorgrigore/MiniCAD/blob/main/result-owl.png
 
 Am implementat tema folosind cele 3 design pattern-uri in modul urmator:
 
